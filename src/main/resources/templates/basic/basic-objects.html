@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>식 기본 객체 (Expression Basic Objects)</h1>
+<ul>
+    <li>request = <span th:text="${#request}"></span></li> <!-- 자주 사용하기 떄문에 모델에 안담아줘도 타임리프에서 기본으로 제공함-->
+    <li>response = <span th:text="${#response}"></span></li> <!-- 자주 사용하기 떄문에 모델에 안담아줘도 타임리프에서 기본으로 제공함-->
+    <li>session = <span th:text="${#session}"></span></li>
+    <li>servletContext = <span th:text="${#servletContext}"></span></li> <!-- 자주 사용하기 떄문에 모델에 안담아줘도 타임리프에서 기본으로 제공함-->
+    <li>locale = <span th:text="${#locale}"></span></li> <!-- 자주 사용하기 떄문에 모델에 안담아줘도 타임리프에서 기본으로 제공함-->
+</ul>
+<h1>편의 객체</h1>
+<ul>
+    <!-- RequestParam도 자주 사용하기 떄문에 모델에 안담아줘도 타임리프에서 기본으로 제공함! -->
+    <li>Request Parameter = <span th:text="${param.paramData}"></span></li>
+    <li>session = <span th:text="${session.sessionData}"></span></li>
+    <li>spring bean = <span th:text="${@helloBean.hello('Spring!')}"></span></li> <!-- 스프링빈도 접근 가능! -->
+</ul>
+</body>
+</html>
