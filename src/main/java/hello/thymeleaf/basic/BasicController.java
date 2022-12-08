@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -54,6 +55,15 @@ public class BasicController {
     public String basicObjects(HttpSession session) {
         session.setAttribute("sessionData", "Heelo Session");
         return "basic/basic-objects";
+    }
+
+    /**
+     * 타임리프 - 유틸리티 객체 및 날짜 지원
+     */
+    @GetMapping("/date")
+    public String date(Model model) {
+        model.addAttribute("localDateTime", LocalDateTime.now());
+        return "basic/date";
     }
 
     @Data
