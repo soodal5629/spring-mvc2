@@ -66,6 +66,16 @@ public class BasicController {
         return "basic/date";
     }
 
+    /**
+     * 타임리프가 제공하는 url 링크 (쿼리스트링, PathVariable 등)
+     * */
+    @GetMapping("/link")
+    public String link(Model model) {
+        model.addAttribute("param1", "data1");
+        model.addAttribute("param2", "data2");
+        return "basic/link";
+    }
+
     @Data
     static class User {
         private String username;
